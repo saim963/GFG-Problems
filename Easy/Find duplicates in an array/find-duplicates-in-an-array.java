@@ -24,18 +24,18 @@ class GFG {
 
 class Solution {
     public static ArrayList<Integer> duplicates(int arr[], int n) {
-        // Arrays.sort(arr);
-        // ArrayList<Integer> list = new ArrayList<>();
-        // int i=0;
-        // while(i<n-1){
-        //     if(arr[i]==arr[i+1]){
-        //         list.add(arr[i+1]);
-        //     }
-        //     i++;
-        // }
-        // if(!list.isEmpty())
-        //     return list;
-        // return new ArrayList<>(List.of(-1));
+        /*Arrays.sort(arr);
+        ArrayList<Integer> list = new ArrayList<>();
+        int i=0;
+        while(i<n-1){
+            if(arr[i]==arr[i+1]){
+                list.add(arr[i+1]);
+            }
+            i++;
+        }
+        if(!list.isEmpty())
+            return list;
+        return new ArrayList<>(List.of(-1));*/
         
         Arrays.sort(arr);
         ArrayList<Integer> list = new ArrayList<>();
@@ -46,7 +46,6 @@ class Solution {
         }
         if(!list.isEmpty()){
             Set<Integer> uniqueDuplicates = new HashSet<>(list);
-            // Collections.sort(numbers);
             ArrayList<Integer> uList = new ArrayList<>(uniqueDuplicates);
             Collections.sort(uList);
             
@@ -54,23 +53,22 @@ class Solution {
         }
         return new ArrayList<>(List.of(-1));
         
-        // Arrays.sort(arr);
-        // ArrayList<Integer> list = new ArrayList<>();
-        // for (int i=0; i<(n-1); i++){
-        //      if (arr[i] == arr[i+1]){
-        //          list.add(arr[i]);             
-        //     }
-        // }
+        /*Arrays.sort(arr);
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i=0; i<(n-1); i++){
+             if (arr[i] == arr[i+1]){
+                 list.add(arr[i]);             
+            }
+        }
         
-        // if(!list.isEmpty()){
-        //     for (int i=0; i<list.size()-1;i++){
-        //         if(list.get(i)==list.get(i+1)){
-        //             list.remove(i+1);
-        //         }
-        //     }
-        //     return list;
-        // }
-        // list.add(-1);
-        // return list;
+        if(!list.isEmpty()){
+            for (int i=0; i<list.size()-1;i++){
+                if(list.get(i)==list.get(i+1)){
+                    list.remove(i+1);
+                }
+            }
+            return list;
+        }
+        return new ArrayList<>(List.of(-1));*/
     }
 }

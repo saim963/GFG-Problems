@@ -40,7 +40,6 @@ class Solution {
     // Function to find equilibrium point in the array.
     public static int equilibriumPoint(long arr[], int n) {
 
-        /*
         int Sr = 0;
         int Sl = 0;
         if(n==1) return 1;
@@ -49,30 +48,10 @@ class Solution {
         }
         for(int i=0; i<n-1; i++){
             if(Sl==Sr)
-                return i+1;
+                return i+1;//1 based indexing 
             
             Sl += arr[i];
-            Sr += arr[i+1];
-        }
-        return -1;*/
-        // Your code here
-        long sum=0;
-        for(int i=0;i<n;i++){
-            sum=sum+arr[i];
-        }
-        
-        // Now we check (sum of prefix == sum of suffix)
-        long prefix=0;
-        for(int i=0;i<n;i++){
-            
-            // (sum of suffix = sum-prefix-a[i])
-            if(prefix == sum-prefix-arr[i]){
-                return i+1;
-            }
-            else{
-                // first element added to prefix
-                prefix=prefix+arr[i];
-            }
+            Sr -= arr[i+1];
         }
         return -1;
     }

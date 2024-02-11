@@ -33,35 +33,35 @@ class GFG
 
 class Solution
 {
-	int select(int arr[], int i)
+	int  select(int arr[], int i)
 	{
         // code here such that selectionSort() sorts arr[]
+        
         selectionSort(arr,i);
         return arr[i];
-        
 	}
 	
 	void selectionSort(int arr[], int n)
 	{
-	    for(int i=0; i<arr.length; i++) {
-            //find the max item in the remaining array and swap with correct index
-            int last = arr.length - i - 1;
-            int maxIndex = getMaxIndex(arr, last);
-            swap(arr,maxIndex,last);
-        }
+	    for(int i=0; i<n; i++){
+	        int start =0;
+	        int end = n -i -1;
+	        int maxIndex = getMax(arr,0,end);
+	        swap(arr,maxIndex,end);
+	    }
 	}
-    int getMaxIndex(int[] nums, int end){
-        int max = 0;
-        for(int i=0; i<=end; i++){
-            if(nums[max]<nums[i]){
-                max = i;
-            }
-        }
-        return max;
-    }
-    void swap(int[] nums,int first, int second){
-        int temp = nums[first];
-        nums[first]=nums[second];
-        nums[second]=temp;
-    }
+	int getMax(int[] arr, int start, int end){
+	    int max= 0;
+	    for(int i=start; i<=end; i++){
+	        if(arr[i]>arr[max]){
+	            max = i;
+	        }
+	    }
+	    return max;
+	}
+	void swap(int[] arr, int first, int second){
+	    int temp = arr[first];
+	    arr[first] = arr[second];
+	    arr[second] = temp;
+	}
 }

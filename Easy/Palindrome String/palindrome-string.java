@@ -23,19 +23,15 @@ class GFG {
 //User function Template for Java
 
 class Solution {
-    int isPalindrome(String str) {
-        if (str == null || str.length() == 0) {
-            return 1;
-        }
-        str = str.toLowerCase();
-        for (int i = 0; i <= str.length() / 2; i++) {
-            char start = str.charAt(i);
-            char end = str.charAt(str.length() - 1 - i);
-
-            if (start != end) {
-                return 0;
+    int isPalindrome(String s) {StringBuilder builder = new StringBuilder();
+        String x =s.toLowerCase();//every element is in lowercase
+        //non-alphanumeric characters means other than alphabets nad numbers
+        for(int i=0; i<x.length(); i++){
+            if(x.charAt(i)>=(char)48 && x.charAt(i)<=(char)57 || x.charAt(i)>=(char)97 && x.charAt(i)<=(char)122){
+                builder.append(x.charAt(i));
             }
         }
-        return 1;
+        if(builder.toString().contentEquals(builder.reverse())) return 1;
+        return 0;
     }
 };

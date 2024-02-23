@@ -41,5 +41,6 @@ class Solution {
             }
         }
         return 0;
+        //works on max/min concept using greedy method
     }
 };

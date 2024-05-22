@@ -1,8 +1,5 @@
 //{ Driver Code Starts
 //Initial Template for Java
-
-
-
 import java.util.stream.Collectors; 
 import java.util.*;
 import java.io.*;
@@ -30,29 +27,12 @@ public class Main {
 // } Driver Code Ends
 
 
-//User function Template for Java
-
 class Solution {
     int print2largest(int arr[], int n) {
-        if (n < 2) {
-            return -1; // or handle the error in an appropriate way
+        Arrays.sort(arr);
+        for(int i=n-1; i>0; i--){
+            if(arr[i]!=arr[i-1])    return arr[i-1];
         }
-        int firstMax = Integer.MIN_VALUE;
-        int secondMax = Integer.MIN_VALUE;
-        boolean allSame = true;
-
-        for (int i = 0; i < n; i++) {
-            if (arr[i] != arr[0]) {
-                allSame = false;
-            }
-            if (arr[i] > firstMax) {
-                secondMax = firstMax;
-                firstMax = arr[i];
-            } else if (arr[i] > secondMax && arr[i] != firstMax) {
-                secondMax = arr[i];
-            }
-        }
-
-        return allSame ? -1 : secondMax;
+        return -1;
     }
-}   
+}

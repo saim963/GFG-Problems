@@ -48,14 +48,13 @@ class Array {
 class Solution{
     //Function to find the leaders in the array.
     static ArrayList<Integer> leaders(int arr[], int n){
-        //leader is greater than or equal to all elements on RHS also rightmost element is always leader
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        int highest = arr[n-1];
+        ArrayList<Integer> list = new ArrayList<>();
+        int highest =arr[n-1];
         for(int i=n-1; i>=0; i--){
             if(arr[i]>=highest){
                 highest = arr[i];
-                list.add(arr[i]);
-            }
+                list.add(highest);
+            } 
         }
         Collections.reverse(list);
         return list;

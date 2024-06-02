@@ -41,19 +41,27 @@ class Solution{
     // n is the size of array
     static int findFloor(long arr[], int n, long x)
     {
-       int start =0;
-       int end = (n-1);
-       while(start<=end){
-           int mid = (start + (end-start)/2);
-           if(x<arr[mid]){
-               end = mid-1;
-           }else if(x>arr[mid]){
-               start = mid+1;
-           }else{
-               return mid;
-           }
-       }
-       return end;
+        // return floor(arr,n,x,0,n-1);
+        
+        int start =0;
+        int end =n-1;
+        if (x < arr[start]) {
+            return -1;
+        }
+        while(start<=end){
+            int mid = start+(end-start)/2;
+            if(x<arr[mid])  end=mid-1;
+            else if(x>arr[mid])  start=mid+1;
+            else    return mid;
+        }
+        return end;
     }
+    // static int floor(long arr[], int n, long x, int s, int e){
+    //     if(s>e) return -1;
+    //     int m = s+(e-s)/2;
+    //     if(x>arr[m])    return floor(arr, n, x, m+1, e);
+    //     else if(x<arr[m])   return floor(arr, n, x, s, m-1);
+    //     return m;
+    // }
     
 }
